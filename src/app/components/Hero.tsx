@@ -15,9 +15,12 @@ export default function Hero() {
           entrepreneurs, and anyone committed to the mindset.
         </p>
 
-        <button className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest text-black transition hover:bg-zinc-300">
-          Shop Collection
-        </button>
+        <a
+  href="#products"
+  className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest text-black transition hover:bg-zinc-300"
+>
+  Shop Collection
+</a>
       </section>
     </main>
   );
