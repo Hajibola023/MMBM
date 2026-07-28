@@ -18,6 +18,38 @@ export default function CartPage() {
     0
   );
 
+  async function handleCheckout() {
+    try {
+      const response = await fetch("/api/checkout", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    items: cart.map((item) => ({
+      slug: item.slug,
+      color: item.color,
+      size: item.size,
+      quantity: item.quantity,
+    })),
+  }),
+});
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Checkout failed");
+      }
+
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Unable to start checkout. Please try again.");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white px-6 py-10 text-black">
       <div className="mx-auto max-w-6xl">
@@ -165,6 +197,7 @@ export default function CartPage() {
 
               <button
                 type="button"
+                onClick={handleCheckout}
                 className="mt-8 w-full rounded-full bg-black px-8 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-zinc-800"
               >
                 Checkout
