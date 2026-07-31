@@ -14,15 +14,16 @@ export default function ContactPage() {
 
         <div className="space-y-8 text-lg leading-8 text-zinc-300">
           <p>
-            For order support, shipping enquiries, collaborations and general
-            questions, contact the MMBM team using the details below.
+            For order support, shipping enquiries, collaborations, or general
+            questions, get in touch with the MMBM team using the contact details
+            below.
           </p>
 
           <div>
             <h2 className="mb-2 font-black uppercase text-white">Email</h2>
             <a
-              href="mailto:mmbmshop01@gmail.com
-              className="underline underline-offset-4"
+              href="mailto:mmbmshop01@gmail.com"
+              className="underline underline-offset-4 transition hover:text-white"
             >
               mmbmshop01@gmail.com
             </a>
@@ -30,35 +31,48 @@ export default function ContactPage() {
 
           <div>
             <h2 className="mb-2 font-black uppercase text-white">Instagram</h2>
-            <p>@mmbm_shop</p>
+            <a
+              href="https://www.instagram.com/mmbm_shop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 transition hover:text-white"
+            >
+              @mmbm_shop
+            </a>
           </div>
-          
-          <h2 className="font-semibold uppercase tracking-[0.35em] text-zinc-400">
-  WHATSAPP
-</h2>
 
-<p>
-  +44 7376 957309
-</p>
+          <div>
+            <h2 className="mb-2 font-black uppercase text-white">WhatsApp</h2>
+            <a
+              href="https://wa.me/447376957309"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 transition hover:text-white"
+            >
+              +44 7376 957309
+            </a>
+          </div>
+
           <div>
             <h2 className="mb-2 font-black uppercase text-white">Shipping</h2>
-            <p>SHIPPING
-
-Orders are typically processed within 1–3 business days. Shipping times vary depending on your location.</p>
+            <p>
+              Orders are typically processed within 1–3 business days. Shipping
+              times vary depending on your location.
+            </p>
           </div>
 
           <div>
             <h2 className="mb-2 font-black uppercase text-white">Returns</h2>
             <p>
-              RETURNS
-
-Returns are accepted within 14 days of delivery, provided items are unworn, unwashed, and returned in their original condition with all tags attached.
+              Returns are accepted within 14 days of delivery, provided items
+              are unworn, unwashed, and returned in their original condition
+              with all tags attached.
             </p>
           </div>
         </div>
 
         <Link
-          href="/#products"
+          href="/#shop"
           className="mt-12 inline-block rounded-full bg-white px-8 py-4 font-bold uppercase tracking-wider text-black transition hover:bg-zinc-200"
         >
           Shop Collection
