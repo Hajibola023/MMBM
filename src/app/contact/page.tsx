@@ -42,24 +42,38 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="mb-2 font-black uppercase text-white">WhatsApp</h2>
-            <a
-              href="https://wa.me/447376957309"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 transition hover:text-white"
-            >
-              +44 7376 957309
-            </a>
-          </div>
+  <h2 className="mb-2 font-black uppercase text-white">Email</h2>
+  <a
+    href="mailto:mmbmshop01@gmail.com"
+    className="text-zinc-300 hover:text-white transition"
+  >
+    mmbmshop01@gmail.com
+  </a>
+</div>
 
-          <div>
-            <h2 className="mb-2 font-black uppercase text-white">Shipping</h2>
-            <p>
-              Orders are typically processed within 1–3 business days. Shipping
-              times vary depending on your location.
-            </p>
-          </div>
+<div>
+  <h2 className="mb-2 font-black uppercase text-white">Instagram</h2>
+  <a
+    href="https://instagram.com/mmbm_shop"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-zinc-300 hover:text-white transition"
+  >
+    @mmbm_shop
+  </a>
+</div>
+
+<div>
+  <h2 className="mb-2 font-black uppercase text-white">WhatsApp</h2>
+  <a
+    href="https://wa.me/447376957309"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-zinc-300 hover:text-white transition"
+  >
+    +44 7376 957309
+  </a>
+</div>
 
           <div>
             <h2 className="mb-2 font-black uppercase text-white">Returns</h2>
