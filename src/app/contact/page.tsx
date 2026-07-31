@@ -20,28 +20,6 @@ export default function ContactPage() {
           </p>
 
           <div>
-            <h2 className="mb-2 font-black uppercase text-white">Email</h2>
-            <a
-              href="mailto:mmbmshop01@gmail.com"
-              className="underline underline-offset-4 transition hover:text-white"
-            >
-              mmbmshop01@gmail.com
-            </a>
-          </div>
-
-          <div>
-            <h2 className="mb-2 font-black uppercase text-white">Instagram</h2>
-            <a
-              href="https://www.instagram.com/mmbm_shop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 transition hover:text-white"
-            >
-              @mmbm_shop
-            </a>
-          </div>
-
-          <div>
   <h2 className="mb-2 font-black uppercase text-white">Email</h2>
   <a
     href="mailto:mmbmshop01@gmail.com"
