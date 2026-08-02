@@ -21,19 +21,20 @@ export default function CartPage() {
   async function handleCheckout() {
     try {
       const response = await fetch("/api/checkout", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    items: cart.map((item) => ({
-      slug: item.slug,
-      color: item.color,
-      size: item.size,
-      quantity: item.quantity,
-    })),
-  }),
-});
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: cart.map((item) => ({
+            slug: item.slug,
+            color: item.color,
+            size: item.size,
+            gender: item.gender,
+            quantity: item.quantity,
+          })),
+        }),
+      });
 
       const data = await response.json();
 
@@ -95,7 +96,7 @@ export default function CartPage() {
 
                 return (
                   <div
-                    key={`${item.slug}-${item.color}-${item.size}`}
+                    key={`${item.slug}-${item.color}-${item.size}-${item.gender}`}
                     className="grid gap-6 border-b py-7 sm:grid-cols-[120px_1fr_auto] sm:items-center"
                   >
                     <Image
@@ -119,6 +120,10 @@ export default function CartPage() {
                         Size: {item.size}
                       </p>
 
+                      <p className="text-sm text-zinc-500">
+                        Gender: {item.gender}
+                      </p>
+
                       <p className="mt-3 font-bold">
                         £{item.price}
                       </p>
@@ -129,7 +134,8 @@ export default function CartPage() {
                           removeFromCart(
                             item.id,
                             item.color,
-                            item.size
+                            item.size,
+                            item.gender
                           )
                         }
                         className="mt-4 text-xs font-bold uppercase tracking-[0.15em] underline"
@@ -146,7 +152,8 @@ export default function CartPage() {
                             decreaseQuantity(
                               item.id,
                               item.color,
-                              item.size
+                              item.size,
+                              item.gender
                             )
                           }
                           className="px-4 py-2 text-lg font-bold"
@@ -165,7 +172,8 @@ export default function CartPage() {
                             increaseQuantity(
                               item.id,
                               item.color,
-                              item.size
+                              item.size,
+                              item.gender
                             )
                           }
                           className="px-4 py-2 text-lg font-bold"

@@ -70,6 +70,7 @@ export default async function ProductPage({
              image={product.images[0]}
              colors={product.colors}
              sizes={product.sizes}
+             genders={product.genders}
             />
 
             <div className="mt-8 border-t pt-8 text-zinc-600 leading-7">

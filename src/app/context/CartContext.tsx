@@ -16,6 +16,7 @@ export type CartItem = {
   image: string;
   color: string;
   size: string;
+  gender: string;
   quantity: number;
 };
 
@@ -25,17 +26,20 @@ type CartContextType = {
   increaseQuantity: (
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) => void;
   decreaseQuantity: (
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) => void;
   removeFromCart: (
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) => void;
   clearCart: () => void;
 };
@@ -52,7 +56,6 @@ export function CartProvider({
   const [cart, setCart] = useState<CartItem[]>([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  // Load the saved cart when the website opens.
   useEffect(() => {
     try {
       const savedCart = localStorage.getItem("cart");
@@ -72,7 +75,6 @@ export function CartProvider({
     }
   }, []);
 
-  // Save the cart after the original saved cart has loaded.
   useEffect(() => {
     if (!hasLoaded) return;
 
@@ -83,12 +85,14 @@ export function CartProvider({
     cartItem: CartItem,
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) {
     return (
       cartItem.id === id &&
       cartItem.color === color &&
-      cartItem.size === size
+      cartItem.size === size &&
+      cartItem.gender === gender
     );
   }
 
@@ -99,7 +103,8 @@ export function CartProvider({
           cartItem,
           item.id,
           item.color,
-          item.size
+          item.size,
+          item.gender
         )
       );
 
@@ -109,7 +114,8 @@ export function CartProvider({
             cartItem,
             item.id,
             item.color,
-            item.size
+            item.size,
+            item.gender
           )
             ? {
                 ...cartItem,
@@ -132,11 +138,12 @@ export function CartProvider({
   function increaseQuantity(
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) {
     setCart((previousCart) =>
       previousCart.map((cartItem) =>
-        isSameItem(cartItem, id, color, size)
+        isSameItem(cartItem, id, color, size, gender)
           ? {
               ...cartItem,
               quantity: cartItem.quantity + 1,
@@ -149,12 +156,13 @@ export function CartProvider({
   function decreaseQuantity(
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) {
     setCart((previousCart) =>
       previousCart
         .map((cartItem) =>
-          isSameItem(cartItem, id, color, size)
+          isSameItem(cartItem, id, color, size, gender)
             ? {
                 ...cartItem,
                 quantity: cartItem.quantity - 1,
@@ -168,12 +176,19 @@ export function CartProvider({
   function removeFromCart(
     id: number,
     color: string,
-    size: string
+    size: string,
+    gender: string
   ) {
     setCart((previousCart) =>
       previousCart.filter(
         (cartItem) =>
-          !isSameItem(cartItem, id, color, size)
+          !isSameItem(
+            cartItem,
+            id,
+            color,
+            size,
+            gender
+          )
       )
     );
   }

@@ -56,6 +56,20 @@ export async function POST(request: Request) {
       mode: "payment",
       
       line_items: lineItems,
+      billing_address_collection: "required",
+
+shipping_address_collection: {
+  allowed_countries: [
+    "GB",
+    "CA",
+    "US",
+    "NG",
+  ],
+},
+
+phone_number_collection: {
+  enabled: true,
+},
       success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/cancel`,
     });
