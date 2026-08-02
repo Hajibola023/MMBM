@@ -8,11 +8,11 @@ export default function Hero() {
           Discipline • Patience • Consistency
         </p>
 
-        <h1 className="max-w-5xl text-5xl font-black uppercase leading-[0.9] tracking-[-0.04em] sm:text-6xl md:text-8xl lg:text-9xl">
+        <h1 className="max-w-4xl text-4xl font-black uppercase leading-[0.95] tracking-[-0.03em] sm:text-5xl md:text-7xl lg:text-8xl">
           Money Must Be Made
         </h1>
 
-        <p className="mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base md:text-lg">
+        <p className="mt-6 max-w-xl text-sm leading-7 text-zinc-300 sm:text-base md:text-lg">
           Premium streetwear for dream chasers, creators, entrepreneurs, and
           everyone committed to the mindset.
         </p>
@@ -33,7 +33,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.3em] text-zinc-600">
+        <p className="mt-12 text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
           Scroll to discover
         </p>
       </section>
